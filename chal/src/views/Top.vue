@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import router from '../../src/router';
+import router from '@/router';
 export default {
   name: 'Top',
   methods: {

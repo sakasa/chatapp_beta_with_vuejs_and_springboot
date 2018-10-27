@@ -17,15 +17,15 @@
                 <label class="mdl-textfield__label" for="pincode">Pincode (only Numeric)...</label>
               </div>
             </form>
-            <button id="in_button" 
+            <button id="regist_button" 
               class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-cell mdl-cell--2-col"
               @click="click()">
-              はいる
+              とうろくしてはいる
             </button>
           </div>
           <div class="mdl-cell">&nbsp;</div>
           <div class="mdl-cell">
-            <a href="/regist" class="mdl-button mdl-js-button mdl-button--primary">とうろく</a>
+            <a href="/login" class="mdl-button mdl-js-button mdl-button--primary">もどる</a>
           </div>
           <div class="mdl-cell">&nbsp;</div>
           <div class="mdl-cell">
@@ -39,15 +39,14 @@
 
 <script>
 import router from '@/router';
-
 export default {
-  name: 'Login',
+  name: 'Regist',
   methods: {
     click() {
       /*
       TODO
       ・validate
-      ・sign in
+      ・sign up
       */
       router.push('chat')
     }
