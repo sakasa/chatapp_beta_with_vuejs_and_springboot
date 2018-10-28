@@ -1,34 +1,24 @@
 <template>
   <div class="top">
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-cell">
-      <header class="mdl-layout__header"></header>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <Header :name="name" />
       <main class="mdl-layout__content mdl-grid">
         <div class="page-content">
           <h1>Chal</h1>
-          <div class="mdl-cell">
-            <!-- Simple Textfield -->
-            <form action="#" class="mdl-cell">
-              <div class="mdl-textfield mdl-js-textfield">
-                <input class="mdl-textfield__input" type="text" id="nickname">
-                <label class="mdl-textfield__label" for="nickname">Nickname (only Alpha,Numeric,_)...</label>
-              </div>
-              <div class="mdl-textfield mdl-js-textfield">
-                <input class="mdl-textfield__input" type="password" id="pincode">
-                <label class="mdl-textfield__label" for="pincode">Pincode (only Numeric)...</label>
-              </div>
-            </form>
+          <div>
+            <UserForm/>
             <button id="in_button" 
-              class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-cell mdl-cell--2-col"
+              class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-cell"
               @click="click()">
               はいる
             </button>
           </div>
           <div class="mdl-cell">&nbsp;</div>
-          <div class="mdl-cell">
+          <div>
             <a href="/regist" class="mdl-button mdl-js-button mdl-button--primary">とうろく</a>
           </div>
           <div class="mdl-cell">&nbsp;</div>
-          <div class="mdl-cell">
+          <div>
             <a href="/top" class="mdl-button mdl-js-button mdl-button--primary">とっぷ</a>
           </div>
         </div>
@@ -39,9 +29,15 @@
 
 <script>
 import router from '@/router';
+import UserForm from '@/components/UserForm.vue'; // @ is an alias to /src
+import Header from '@/components/Header.vue';
 
 export default {
   name: 'Login',
+  components: {
+    UserForm,
+    Header,
+  },
   methods: {
     click() {
       /*
@@ -49,8 +45,13 @@ export default {
       ・validate
       ・sign in
       */
-      router.push('chat')
-    }
-  }
-}
+      router.push('chat');
+    },
+  },
+  data() {
+    return {
+      name: 'Login',
+    };
+  },
+};
 </script>
